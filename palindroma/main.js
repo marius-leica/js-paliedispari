@@ -13,19 +13,26 @@ const userWord = prompt("Per favore inserisci una parola da verificare!");
 
 function wordDivider(word) {
   let lettersArray = word.split("");
-  return lettersArray.reverse();
+  return lettersArray.reverse().join();
 }
-console.log(wordDivider(userWord));
 let reverseWord = wordDivider(userWord);
 
-function isPalindroma(wordToVerify) {
+console.log(reverseWord);
+
+function wordToString(wordToVerify) {
   let lettersArray = wordToVerify.split("");
 
-  let palindroma = false;
-  if (lettersArray === reverseWord) {
-    palindroma = true;
-  }
-  return palindroma;
+  //   let palindroma = false;
+  //   if (lettersArray === reverseWord) {
+  //     palindroma = true;
+  //   }
+  return lettersArray.join(); // penso che qui non salvo come si deve il risultato
 }
 
-console.log(isPalindroma(userWord));
+console.log(wordToString(userWord));
+
+if (wordToString(userWord) === wordDivider(userWord)) {
+  console.log("La parola" + " " + userWord + " " + "è palindroma");
+} else {
+  console.log("La parola" + " " + userWord + " " + "non è palindroma");
+}
