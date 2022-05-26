@@ -16,13 +16,16 @@ function wordDivider(word) {
   return lettersArray.reverse();
 }
 console.log(wordDivider(userWord));
+let reverseWord = wordDivider(userWord);
 
 function isPalindroma(wordToVerify) {
+  let lettersArray = wordToVerify.split("");
+
   let palindroma = false;
-  if (wordToVerify === wordDivider(userWord)) {
+  if (lettersArray === reverseWord) {
     palindroma = true;
   }
   return palindroma;
 }
 
-console.log(isPalindroma());
+console.log(isPalindroma(userWord));
